@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let encrypt=(text,s)=>{
+    let res=""
+    for(let i=0;i<text.length;i++){
+        let char=text[i];
+        if(char.toUpperCase()){
+            let ch=String.fromCharCode((char.charCodeAt(0)+s-65)%26+65);
+            res+=ch;
+        }
+        else{
+            let ch=String.fromCharCode((char.charCodeAt(0)+s-97)%26+97);
+            res+=ch;
+        }
+    }    
+        return res;
+    
+}
+let text="AttackAtOnce";
+let s=1;
+document.write("Text:  "+text+"<br>");
+document.write("Shift:  "+s+"<br>");
+document.write("Cipher:  "+encrypt(text,s)+"<br>");
+
+    </script>
+</body>
+</html>
