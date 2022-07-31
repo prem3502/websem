@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>22p</title>
+</head>
+<body>
+
+    <button onclick="cat.play()">play</button>
+    <br>
+    <button onclick="cat.eat()">eat</button>
+    <br>
+    <button onclick="cat.pet()">pet</button>
+    <br>
+    <button onclick="cat.sleep()">sleep</button>
+    <br>
+    <br>
+    <button onclick="show()">show</button>
+    <div id="ans"></div>
+<script>
+
+var cat = {
+  tiredness: 0,
+  hunger: 0,
+  lonliness: 0,
+  happiness: 0,
+  play: function() {
+    this.hunger += 5;
+    this.hunger += 5;
+    this.happiness += 20;
+  },
+  eat: function() {
+    this.hunger -= 5;
+    this.happiness += 5;
+  },
+  pet: function() {
+    this.lonliness -= 5;
+    this.tiredness += 5
+  },
+  sleep: function() {
+    this.tiredness -= 5;
+  }
+}
+
+function show()
+{
+    var html=''
+
+    html+='<div>'+' tiredeness : '+cat.tiredness+'</div>'
+    
+    html+='<div>'+' hunger : '+cat.hunger+'</div>'
+    
+    html+='<div>'+' lonliness : '+cat.lonliness+'</div>'
+    
+    html+='<div>'+' happiness : '+cat.happiness+'</div>'
+
+    document.getElementById('ans').innerHTML=html
+
+}
+
+
+
+
+</script>
+
+</body>
+</html>

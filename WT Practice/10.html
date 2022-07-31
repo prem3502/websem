@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10p</title>
+</head>
+<body>
+    
+<input type="text" id="inp1">
+<br>
+<button onclick="myfunc()">Calculate</button>
+<br>
+<div id="ans"></div>
+<script>
+
+function myfunc(){
+
+    let a= document.getElementById('inp1').value
+    
+
+    let arr= a.split(" ")
+
+    var html="";
+    html+=arr[0].charAt(0)+'. '
+    
+    html+=arr[1].charAt(0)+'. '
+
+    html+=arr[2]
+
+    document.getElementById('ans').innerHTML=html
+
+
+}
+
+</script>
+
+</body>
+</html>

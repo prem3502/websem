@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let n=prompt("Enter the number")
+        let numTest=new Promise(function(resolve, reject){
+            if(n>20)
+                resolve("The number greater then 20")
+            else
+                reject("The number is less then 20")
+            })
+
+            numTest.then((res)=>{
+            console.log(res)
+            }).then(()=>{
+            console.log("Multiple function called");
+            }).finally(()=>{alert("Done")})
+    </script>
+</body>
+</html>

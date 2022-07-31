@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8p</title>
+</head>
+<body>
+    
+    <input type="text" id="inp1">
+    <br>
+    <select name="" id="sel">
+        <option value="cap">Capitalize </option>
+        <option value="pos">Insert at a position</option>
+        <option value="str">string or not</option>
+        <option value="spl">Split into array of words</option>
+    </select>
+<br>
+<button onclick="myfunc()">Operate</button>
+<br>
+<div id ='ans'></div>
+<script>
+function myfunc(){
+
+    let a = document.getElementById('inp1').value
+let b= document.getElementById('sel').value
+let ans=document.getElementById('ans')
+
+  switch(b)
+  {
+    case 'cap':
+const arr = a.split(" ");
+for (var i = 0; i < arr.length; i++) {
+    arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
+
+}
+ 
+const str2 = arr.join(" ");
+// console.log(str2);
+     ans.innerHTML=str2
+    break;
+    case 'pos':
+const arr1= a.split(" ")
+var pos= parseInt(prompt("Enter the position"))
+const string1= prompt("Enter the string")
+var html=' '
+
+pos--;
+
+for(var i=0;i<arr1.length;i++)
+{
+    if(pos==i)
+    html+=" "+string1+' ';
+     html+=arr1[i]
+}
+ans.innerHTML=html
+        break;
+        case 'str':
+            if(isNaN(a))
+            ans.innerHTML='String'
+            else
+            ans.innerHTML='Number '
+
+        break;
+        case 'spl':
+         const arr2=a.split(' ')
+ var html='';
+
+ for(var i=0;i<arr2.length;i++)
+ {
+    html+='<div>'+arr2[i]+'</div>'
+ }
+
+ ans.innerHTML=html
+
+            break;
+
+  }
+
+}
+
+</script>
+
+</body>
+</html>

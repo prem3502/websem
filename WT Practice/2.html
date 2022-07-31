@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2p</title>
+</head>
+<body>
+
+    <input type="number"  id="no1">
+    <br>
+    <input type="number"  id="no2">
+    <br>
+    <button onclick="myfunc()" >Calculate</button>
+    <br>
+    <div id="ans"></div>
+
+    <script>
+
+
+
+     let myfunc=()=>{
+       
+        let a= parseInt(document.getElementById('no1').value)
+  
+        let b= parseInt(document.getElementById('no2').value)
+
+        let a1= document.getElementById('ans');
+        a1.innerHTML=a+b;
+     }
+
+    </script>
+</body>
+</html>

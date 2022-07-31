@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7p</title>
+</head>
+<body>
+     
+    <input type="number"  id="inp1">
+    <br>
+    <button onclick="myfunc()">Calculate</button>
+<br>
+<div id="ans"></div>
+
+<script>
+    function myfunc(){
+        let a= parseInt(document.getElementById('inp1').value)
+
+        let ans=''
+        let i=1;
+        for(i=a;i>0;i=i-2)
+        {
+            ans+=i+' '
+        }
+        document.getElementById('ans').innerHTML=ans
+    }
+</script>
+
+</body>
+</html>

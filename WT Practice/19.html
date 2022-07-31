@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>19p</title>
+</head>
+<body>
+
+    <input type="text" id="inp1">
+    <br>
+    <button onclick="myfunc()">Search</button>
+    <br>
+    <div id="ans1"></div>
+
+    <script>
+
+        function myfunc()
+        {
+            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;  
+            var str=document.getElementById('inp1').value
+if(mailformat.test(str))
+{  
+    document.getElementById('ans1').innerHTML="True";
+}  
+else  
+{  
+    document.getElementById('ans1').innerHTML="False";
+}
+}
+        
+    </script>
+</body>
+</html>

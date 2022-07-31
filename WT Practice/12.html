@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12p</title>
+</head>
+<body>
+    <input type="number" id="y1" placeholder="Year 1">
+<br>
+    <input type="number" id="y2" placeholder="year 2">
+    <br>
+    <button onclick="myfunc()">calculate</button>
+    <br>
+    <div id="ans1"></div>
+
+    <script>
+function myfunc()
+{
+    var y1= parseInt(document.getElementById('y1').value)
+
+    var y2= parseInt(document.getElementById('y2').value)
+
+    var i=y1;
+var html=''
+    for(i=y1;i<=y2;i++)
+    {
+        if(i%400==0||(i%4==0&&i%100!=0))
+        html+=i+' '
+    }
+ document.getElementById('ans1').innerHTML=html
+}
+
+    </script>
+</body>
+</html>

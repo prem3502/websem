@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4p</title>
+</head>
+<body>
+    <input type="number" name="" id="inp1">
+    <br>
+    <input type="number" name="" id="inp2">
+    <br>
+      <select name="" id="oper">
+        <option value="1">Add</option>
+        <option value="2">Subtract</option>
+        <option value="3">Multiply</option>
+        <option value="4">Divide</option>
+      </select>
+      <br>
+      <button onclick="myfunc()">Calculate</button>
+      <br>
+      <br>
+      <button onclick="myfunc1()">Show</button>
+      <br>
+      <div id="ans"></div>
+
+      <script>
+        let p;
+      function myfunc(){
+
+  let a= parseInt(document.getElementById('inp1').value)
+  let b= parseInt(document.getElementById('inp2').value)
+let op= parseInt(document.getElementById('oper').value)
+
+
+// let ans=0;
+  switch(op)
+  {
+    case 1: 
+    p= new Promise(function (resolve,reject){
+
+        setTimeout(function(){
+            resolve(a+b)
+        },4000)
+    })
+    //  ans=a+b
+    // let a1=document.getElementById('ans')
+  
+    break;
+    case 2: 
+    p= new Promise(function (resolve,reject){
+
+setTimeout(function(){
+    resolve(a-b)
+},4000)
+})
+    // let a1=document.getElementById('ans')
+    // a1.innerHTML=c1
+    break;
+    case 3: 
+    p= new Promise(function (resolve,reject){
+
+setTimeout(function(){
+    resolve(a*b)
+},4000)
+})
+    // a1.innerHTML=c2
+    break;
+    case 4: 
+    p= new Promise(function (resolve,reject){
+
+setTimeout(function(){
+    resolve(a/b)
+},4000)
+})
+    // a1.innerHTML=c3
+    break;
+  }
+
+      }
+
+
+      async function myfunc1()
+      {
+
+        let ans= await p
+
+        let a1=document.getElementById('ans')
+  a1.innerHTML=ans
+      }
+
+      </script>
+</body>
+</html>

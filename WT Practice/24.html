@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+</head>
+<body>
+   
+    <button onclick=bookhotel()>Book Hotel</button>
+    <br>
+    <br>
+    <button onclick=bookhotel1()>Hotels Booked</button>
+    <br>
+    <br>
+    <div id="hotel"></div>
+    <br>
+    <button onclick=bookflight()>Book Flight</button>
+    <br>
+    <br>
+    <button onclick=bookflight1()>Flights Booked</button>
+    <br>
+    <br>
+    <div id="flight"></div>
+    <br>
+  
+    <br>
+
+
+
+
+<script>
+let validator=false;
+var hotel=0;
+let bookhotel =()=>{
+
+var hot=document.getElementById('hotel')
+// hot.innerHTML="No of hotels booked are "+hotel;
+
+
+
+let hotel11 = new Promise(function (resolve, reject) {
+    if (validator) {
+        resolve("Can Book Hotel");
+    } else {
+        reject("Cannot Book Hotel");
+    }
+})
+.then(function(value)
+{
+    console.log(value)
+// var ans=document.getElementById('ans')
+hot.innerHTML=value;
+hotel++;
+}
+)
+.catch(function(value)
+{
+    console.log(value)
+// var ans=document.getElementById('ans')
+hot.innerHTML=value;
+})
+
+
+
+}
+
+let bookhotel1 =()=>{
+// hotel++;
+var hot=document.getElementById('hotel')
+hot.innerHTML="No of hotels booked are "+hotel;
+}
+var flight=0;
+let bookflight =()=>{
+flight++;
+var fli=document.getElementById('flight')
+fli.innerHTML="No of flight booked are "+flight;
+
+
+let flight11 = new Promise(function (resolve, reject) {
+    if (flight>0) {
+        resolve("Flight booked");
+    } else {
+        reject("Flight not booked");
+    }
+})
+.then(function(value)
+{
+    console.log(value)
+    validator=true;
+// var ans=document.getElementById('ans')
+// ans.innerHTML=value;
+}
+)
+.catch(function(value)
+{
+    console.log(value)
+    validator=false;
+// var ans=document.getElementById('ans')
+// ans.innerHTML=value;
+})
+
+
+
+
+
+}
+
+let bookflight1 =()=>{
+// flight++;
+var fli=document.getElementById('flight')
+fli.innerHTML="No of flight booked are "+flight;
+}
+
+
+    
+    
+</script>
+
+</body>
+</html>

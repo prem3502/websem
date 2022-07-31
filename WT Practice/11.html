@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11p</title>
+</head>
+<body>
+    <input type="number" id="inp1" onfocus=" ">
+    <br>
+    <button onclick="addele()">Add element</button>
+    <br>
+    <button onclick="show()">Show array</button>
+    <br>
+    <div id="ans1"></div>
+    <br>
+    <input type="number" id="inp2">
+    <br>
+    <button onclick="split()">Split array</button>
+    <br>
+    <div id="ans2"></div>
+
+    <script>
+   var i=0;
+       var arr = []; 
+    function addele()
+    {
+       arr[i]=parseInt(document.getElementById('inp1').value)
+       i++;
+    }
+  
+    function show(){
+var html=''
+        for(var k=0;k<arr.length;k++)
+        {
+            html+='<div>'+arr[k]+'</div>'
+        }
+
+        document.getElementById('ans1').innerHTML=html;
+    }
+
+    function split(){
+
+          var a= parseInt(document.getElementById('inp2').value)
+
+          var arr1= arr.slice(0,a)
+          var arr2=arr.slice(a,arr.length)
+
+          var html=''
+        for(var k=0;k<arr1.length;k++)
+        {
+            html+=+arr1[k]+' '
+        }
+
+        html+='<br>'
+
+        for(var k=0;k<arr2.length;k++)
+        {
+            html+=+arr2[k]+' '
+        }
+        document.getElementById('ans2').innerHTML=html;
+    }
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <input type="string" id="s1" />
+        <button id="btn">click on me</button>
+        <script>
+        document.getElementById("btn").addEventListener("click", fun);
+        function fun(){
+        let x=document.getElementById("s1").value;
+        x = x.split("")
+        x.sort()
+        let r=""
+        for(let i=0;i<x.length;i++)
+        r+=x[i];
+        document.getElementById("demo").innerHTML=r;
+        }
+        </script>
+        <p id="demo"></p>
+</body>
+</html>

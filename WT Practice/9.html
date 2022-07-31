@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caesar Cipher</title>
+</head>
+<body>
+    
+
+    <input onfocus="this.value=''" type="text" id="val" placeholder="Enter the text"/>
+    <br>
+    <br>
+
+    <input onfocus="this.value=''" type="number" id="num" placeholder="Enter the number to convert the plaintext value" />
+    <br>
+    <br>
+    <input type="button" id="addBtn"onclick=addValues() value="Enter the value" />
+    <br />
+    <br>
+    <input type="button" id="showBtn" onclick=showValues() value="Show the array" />
+    <div id="container"></div>
+
+
+
+
+<script>
+var str;
+var num=0;
+//function to take input
+
+function addValues() {
+ str=document.getElementById('val').value;
+num = parseInt (document.getElementById('num').value);
+
+   
+    
+// input.value = " ";
+}
+
+
+
+//function to show input
+function showValues() {
+   var html = '';
+   var constr='';
+   let mod=0,s=0,k=0;
+   for (var i=0; i<str.length; i++) {
+
+if(str[i]>='a'&&str[i]<='z')
+mod=97+26,s=97;
+else
+mod=65+26,s=65;
+
+if((str.charCodeAt(i)+num)<mod)s=0;
+
+constr+=String.fromCharCode( ((str.charCodeAt(i)+num)%mod)+s);
+  
+
+     }
+
+     html += str+'<br>'+constr;
+   var container = document.getElementById('container');
+   container.innerHTML = html;
+}
+</script>
+
+
+</body>
+</html>
