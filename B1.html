@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let obj = {};
+        let map = new Map();
+        let userslist = ['john','stephen','ruth','sharon','malliga'];
+        
+        for(let i=0;i<userslist.length;i++)
+        {
+            obj[i] = userslist[i];
+            map.set(i,userslist[i]);
+        }
+        
+        let result1;
+        console.log(obj);
+        console.log(map);
+        
+        console.time('Object');
+        result1 = obj.hasOwnProperty(3);
+        console.log(result1);
+        console.timeEnd('Object');
+        
+        
+        console.time('Map');
+        let result2;
+        result2 = map.has(2);
+        console.log(result2);
+        console.timeEnd('Map')
+
+        function myfunc()
+        {
+            let arr=[];
+            let set=new Set();
+            let user=["hi",1,2,3,234,"amay"]
+            for(let i=0;i<user.length;i++)
+            {
+                arr.push(user[i]);
+                set.add(user[i]);
+            }
+            let res;
+            console.time('Array')
+            res=arr.indexOf(3)==-1;
+            console.timeEnd('Array')
+
+            console.time('Set');
+            res=set.has(3);
+            console.timeEnd('Set');
+        }
+        myfunc()
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = []
+        let set = new Set();
+        let userlistname = ['john','stephen','sharon','malliga','ruth'];
+        
+        for(let i=0;i<userlistname.length;i++)
+        {
+            arr.push(userlistname[i]);
+            set.add(userlistname[i]);
+        }
+        console.log(arr);
+        console.log(set);
+        
+        let result1,result2;
+        
+        console.time('Array');
+        result1 = arr.indexOf('stephen') !== -1;
+        console.log(result1);
+        console.timeEnd('Array')
+        
+        console.time('Set');
+        result2 = set.has('stephen');
+        console.log(result2);
+        console.timeEnd('Set')
+        function myfunc()
+        {
+            let arr=[];
+            let set=new Set();
+            let user=["hi",1,2,3,234,"amay"]
+            for(let i=0;i<user.length;i++)
+            {
+                arr.push(user[i]);
+                set.add(user[i]);
+            }
+            let res;
+            console.time('Array')
+            res=arr.indexOf(3)==-1;
+            console.timeEnd('Array')
+            
+            console.time('Set');
+            res=set.has(3);
+            console.timeEnd('Set');
+        }
+
+    </script>
+</body>
+</html>
